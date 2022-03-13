@@ -8,17 +8,74 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Roboto:wght@500&display=swap" rel="stylesheet">
 </head>
 
+<h1> Calculator</h1>
+<p> Enter your values. Click the following button. Your result will be in a pop up. Thanks for using!</p>
+<table>
+  <tr>
+    <th> Addition</th>
+    <th> Subtraction</th>
+  </tr>
+  <tr> 
+    <td> 
+      <div class="area"> 
+        <input id="a" type="text" placeholder="Enter number"> <br>
+        <input id="b" type="text" placeholder = "Enter number"> <br>
+        <button class="B" onclick="add()"> Add</button> 
+    </td>
+    <td>
+      <div class="area"> 
+        <input id="c" type="text" placeholder="Enter first number"> <br>
+        <input id="d" type="text" placeholder = "Enter second number"> <br>
+        <button class="B" onclick="sub()"> Subtract</button> 
+    </td>
+  </tr>
+</div>
+  </table>
 
-<h1> Addition Calculator</h1>
-<p> Enter your values. Click "calculate sum". Your result will be in a pop up. Thanks for using!</p>
-<div class="area"> <input id="a" type="text" placeholder="Enter number."> <br>
-<input id="b" type="text" placeholder = "Enter number."> <br>
-<button class="sumB" onclick="add()"> Calculate Sum</button> </div>
+<table>
+  <tr>
+    <th> Multiplication</th>
+    <th> Division</th>
+  </tr>
+  <tr>
+    <td> 
+    <div class="area"> 
+    <input id="e" type = "text" placeholder= "Enter number"> <br>
+    <input id="f" type = "text" placeholder= "Enter number"> <br>
+    <button class="B" onclick="multi()"> Multiply</button></div>
+    </td>
+    <td>
+      <div class="area"> 
+    <input id="div1" type = "text" placeholder= "Enter divident"> <br>
+    <input id="div2" type = "text" placeholder= "Enter divisor"> <br>
+    <button class="B" onclick="div()"> Divide</button></div>
+    </td>
+  </tr>
+</table>
+
 <script>
 function add(){
   var a = parseInt(document.getElementById("a").value);
   var b = parseInt(document.getElementById("b").value);
-  alert(`The sum of ${a} and ${b} is ${a+b}.`);
+  alert(`${a} + ${b} = ${a+b}.`);
+}
+
+function sub(){
+  var a = parseInt(document.getElementById("c").value);
+  var b = parseInt(document.getElementById("d").value);
+  alert(`${a} - ${b} = ${a-b}.`);
+}
+
+function multi(){
+  var a = parseInt(document.getElementById("e").value);
+  var b = parseInt(document.getElementById("f").value);
+  alert(`${a} × ${b} = ${a*b}`);
+}
+
+function div(){
+  var a = parseInt(document.getElementById("div1").value);
+  var b = parseInt(document.getElementById("div2").value);
+  alert(`${a} ÷ ${b} = ${a/b}`);
 }
 
   </script>
@@ -40,12 +97,19 @@ function add(){
     float: center;
   }
 
-  .sumB{
+  .B{
     border: solid 1px black;
     background-color: white;
   }
-  .sumB:hover{
+  .B:hover{
     background-color: grey;
     cursor: pointer;
+  }
+
+  table, th, td{
+    float: center;
+    border: 1px solid black;
+    margin-left: auto;
+    margin-right: auto;
   }
 </style>
