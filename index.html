@@ -1,0 +1,51 @@
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Roboto:wght@500&display=swap" rel="stylesheet">
+</head>
+
+
+<h1> Addition Calculator</h1>
+<p> Enter your values. Click "calculate sum". Your result will be in a pop up. Thanks for using!</p>
+<div class="area"> <input id="a" type="text" placeholder="Enter number."> <br>
+<input id="b" type="text" placeholder = "Enter number."> <br>
+<button class="sumB" onclick="add()"> Calculate Sum</button> </div>
+<script>
+function add(){
+  var a = parseInt(document.getElementById("a").value);
+  var b = parseInt(document.getElementById("b").value);
+  alert(`The sum of ${a} and ${b} is ${a+b}.`);
+}
+
+  </script>
+
+<style>
+  h1{
+    text-align: center;
+    padding: 10px;
+    font-family: 'Roboto', sans-serif;
+  }
+  p{
+    text-align: center;
+    padding: 5px;
+    font-family: 'Nunito', sans-serif;
+
+  }
+  .area{
+    text-align: center;
+    float: center;
+  }
+
+  .sumB{
+    border: solid 1px black;
+    background-color: white;
+  }
+  .sumB:hover{
+    background-color: grey;
+    cursor: pointer;
+  }
+</style>
