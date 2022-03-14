@@ -1,5 +1,7 @@
 <head>
   <title>CalcI</title>
+
+<title>Calc:D</title><head>
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
@@ -9,8 +11,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Roboto:wght@500&display=swap" rel="stylesheet">
 </head>
 
-<h1> Calculator</h1>
+<h1> MultiPurpose Calculator</h1>
 <p> Enter your values. Click the following button. Your result will be in a pop up. Thanks for using!</p>
+<h2> Simple Calculations</h2>
 <table style="overflow-x:auto;">
   <tr>
     <th> Addition</th>
@@ -53,6 +56,35 @@
     </td>
   </tr>
 </table>
+<h2> Geometric Manipulations</h2>
+<h3> Area</h3>
+<table>
+  <tr>
+    <th> Rectangle</th>
+    <th> Triangle</th>
+    <th> Circle</th>
+  </tr>
+  <tr>
+    <td> 
+    <div class="area">
+      <input id="wid" type = "text" placeholder = "Width"> <br>
+      <input id="hig" type = "text" placeholder = "Height"> <br>
+      <button class="B" onclick="multi()">Solve</button>
+    </div></td>
+    <td>
+      <div class="area">
+      <input id="bas" type = "text" placeholder = "Base"> <br>
+      <input id="trihi" type = "text" placeholder = "Height"> <br>
+      <button class="B" onclick="triA()">Solve</button>
+      </div>
+    </td>
+    <td>
+      <div class="area">
+      <input id="rad" type = "text" placeholder = "Radius"> <br><br>
+      <button class="B" onclick="cirA()">Solve</button>
+    </td>
+  </tr>
+</table>
 <footer>
   <p> Site made 2022. Source code: <a href="https://github.com/tinax2020/calculator/blob/main/index.html">here</a> on GitHub by @tinax2020.</p>
 </footer>
@@ -82,12 +114,33 @@ function div(){
   alert(`${a} ÷ ${b} = ${a/b}`);
 }
 
+function triA(){
+  var a = parseInt(document.getElementById("bas").value);
+  var b = parseInt(document.getElementById("trihi").value);
+  alert(`${a} * ${b} * 0.5 = ${a*b*1/2}`);
+}
+
+function cirA(){
+  var r = parseInt(document.getElementById("rad").value);
+  alert(`${r} ^2 * pi = ${r*r}π, or ${r*r*3.14} when π = 3.14.`);
+}
+
   </script>
 
 <style>
   h1{
     text-align: center;
     padding: 10px;
+    font-family: 'Roboto', sans-serif;
+  }
+  h2{
+    text-align: center;
+    padding: 10px;
+    font-family: 'Roboto', sans-serif;
+  }
+  h3{
+    text-align: center;
+    padding: 5px;
     font-family: 'Roboto', sans-serif;
   }
   p{
