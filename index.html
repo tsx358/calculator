@@ -1,5 +1,3 @@
-
-
 <title>Calc:D</title><head>
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,21 +19,22 @@
   <tr> 
     <td> 
       <div class="area"> 
-        <input id="a" type="text" placeholder="Enter number"> <br>
-        <input id="b" type="text" placeholder = "Enter number"> <br>
+        <input id="addendA" type="text" placeholder="Enter number"> <br>
+        <input id="addendB" type="text" placeholder = "Enter number"> <br>
         <button class="B" onclick="add()"> Add</button> 
     </td>
     <td>
       <div class="area"> 
-        <input id="c" type="text" placeholder="Enter first number"> <br>
-        <input id="d" type="text" placeholder = "Enter second number"> <br>
+        <input id="minuend" type="text" placeholder="Enter first number"> <br>
+        <input id="subtrahend" type="text" placeholder = "Enter second number"> <br>
         <button class="B" onclick="sub()"> Subtract</button> 
     </td>
   </tr>
 </div>
   </table>
 <br>
-<table style="overflow-x:auto;">
+<div style="overflow-x:auto;">
+<table>
   <tr>
     <th> Multiplication</th>
     <th> Division</th>
@@ -43,8 +42,8 @@
   <tr>
     <td> 
     <div class="area"> 
-    <input id="e" type = "text" placeholder= "Enter number"> <br>
-    <input id="f" type = "text" placeholder= "Enter number"> <br>
+    <input id="multiplicand" type = "text" placeholder= "Enter number"> <br>
+    <input id="multiplier" type = "text" placeholder= "Enter number"> <br>
     <button class="B" onclick="multi()"> Multiply</button></div>
     </td>
     <td>
@@ -84,26 +83,62 @@
     </td>
   </tr>
 </table>
+<h3> Volume</h3>
+<table>
+  <tr>
+    <th> Right Rectangular Prism</th>
+    <th> Right Rectangular Pyramid</th>
+    <th> Triangular Pyramid</th>
+  </tr>
+  <tr>
+    <td>
+      <div class="area">
+      <input id="recPrismlen" type = "text" placeholder = "Length"><br>
+      <input id="recPrismWid" type = "text" placeholder = "Width"><br>
+      <input id="recPrismHei" type = "text" placeholder = "Height"> <br>
+      <button class="B" onclick="recPrismV()"> Solve </button>
+      </div>
+    </td>
+    <td>
+      <div class="area">
+      <input id="lenBpyV" type = "text" placeholder = "Base Length"><br>
+      <input id="widBpyV" type = "text" placeholder = "Base Width"><br>
+      <input id="heiPpyV" type = "text" placeholder = "Pyramid Height"> <br>
+      <button class="B" onclick="pyV()"> Solve </button>
+      </div>
+    </td>
+    <td>
+      <div class="area">
+      <input id="baseTPy" type = "text" placeholder = "Base Length"><br>
+      <input id="heightBaseTPy" type = "text" placeholder = "Height on Base"><br>
+      <input id="heightTPy" type = "text" placeholder = "Pyramid Height"> <br>
+      <button class="B" onclick="tpyV()"> Solve </button>
+      </div>
+    </td>
+  </tr>
+</table>
+</div>
 <footer>
   <p> Site made 2022. Source code: <a href="https://github.com/tinax2020/calculator/blob/main/index.html">here</a> on GitHub by @tinax2020.</p>
 </footer>
 
+
 <script>
 function add(){
-  var a = parseInt(document.getElementById("a").value);
-  var b = parseInt(document.getElementById("b").value);
+  var a = parseInt(document.getElementById("addendA").value);
+  var b = parseInt(document.getElementById("addendB").value);
   alert(`${a} + ${b} = ${a+b}.`);
 }
 
 function sub(){
-  var a = parseInt(document.getElementById("c").value);
-  var b = parseInt(document.getElementById("d").value);
+  var a = parseInt(document.getElementById("minuend").value);
+  var b = parseInt(document.getElementById("subtrahend").value);
   alert(`${a} - ${b} = ${a-b}.`);
 }
 
 function multi(){
-  var a = parseInt(document.getElementById("e").value);
-  var b = parseInt(document.getElementById("f").value);
+  var a = parseInt(document.getElementById("multiplicand").value);
+  var b = parseInt(document.getElementById("multiplier").value);
   alert(`${a} × ${b} = ${a*b}`);
 }
 
@@ -124,7 +159,28 @@ function cirA(){
   alert(`${r} ^2 * pi = ${r*r}π, or ${r*r*3.14} when π = 3.14.`);
 }
 
-  </script>
+function recPrismV(){
+  var l = parseInt(document.getElementById("recPrismlen").value);
+  var w = parseInt(document.getElementById("recPrismWid").value);
+  var h = parseInt(document.getElementById("recPrismHei").value);
+  alert(`${l} × ${w} × ${h} = ${l*w*h}.` )
+}
+
+function pyV(){
+  var l = parseInt(document.getElementById("lenBpyV").value);
+  var w = parseInt(document.getElementById("widBpyV").value);
+  var h = parseInt(document.getElementById("heiPpyV").value);
+  alert(`${l} × ${w} × ${h} × 1/3 = ${l*w*h/3}.` )
+}
+
+function tpyV(){
+  var b = parseInt(document.getElementById("baseTPy").value);
+  var h0 = parseInt(document.getElementById("heightBaseTPy").value);
+  var h = parseInt(document.getElementById("heightTPy").value);
+  alert(`${b} × ${h0} × ${h} × 1/6 = ${b*h0*h/6}.` )
+}
+
+</script>
 
 <style>
   h1{
